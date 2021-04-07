@@ -1,0 +1,25 @@
+.head-title img{
+  height: 150px;
+  width: 240px;
+  filter: contrast(150%);
+  margin: 10px;
+}
+.head-title{
+  max-width: 2000px;
+  background: #14171A;
+  height: 170px;
+  display: block;
+  margin: -10px -1px;
+  padding: 0 15%;
+  text-align: center;
+  visibility:;
+}
+.headborder{
+  max-width: 110%;
+  height: 173px;
+  margin: -10px -10px;
+  background: #F4A726;
+  filter: drop-shadow(3px 3px 3px black);
+
+
+}
