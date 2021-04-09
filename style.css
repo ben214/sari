@@ -1,19 +1,20 @@
 body{
   background-image: url('bgrnd.jpg');
 
-
 }
 .head-title #sara{
   height: 75px;
   width: 180px;
   margin: 10px 0;
-
+}
+#sara:hover{
+    width: 190px;
+    height: 80px;
 }
 .head-title #ils{
   height: 75px;
   width: 75px;
   margin: 10px 0;
-
 }
 
 .head-title{
@@ -25,44 +26,116 @@ body{
   padding: 0 15%;
   text-align: center;
   z-index: 1;
+  text-decoration: none;
 }
 .headborder{
+  position: fixed;
+  z-index: 1;
   max-width: 110%;
+  min-width: 100%;
   height: 90px;
   margin: -10px -8px;
   background:linear-gradient(to right,  gray, #F4A726, gray);
-  filter: drop-shadow(3px 3px 3px black);
+  filter: drop-shadow(3px 3px 8px black);
 }
 
 .rightnav{
-  width: 20%;
+  position: fixed;
+  width: 17.1em;
   display: flex;
   flex-direction: column;
   align-content:stretch;
-  background: linear-gradient( to bottom ,#E4E4E1, black, black, #E4E4E1);
-  height: 100%;
-  position:fixed;
-  top:86px;
+  background: linear-gradient( to left ,#202020, black, black, #202020);
+  height: 123%;
+  top:89px;
   right: 0;
   padding: 3px -3px;
   margin: 0 -1px;
 }
 .rightbar{
   height: 45px;
-  width: 68%;
   display: block;
   border: 2px solid #F4A726;
-  padding: 8% 40px;
-  margin: 2px 0;
+  padding: 8% 30px 8% 40px;
+  margin: 1px 2px 4px 0;
   line-height: 40px;
   font-family: 'Rubik';
   font-weight:lighter;
-  font-size: 20px;
+  font-size: 1.3em;
   text-decoration: none;
-  background: linear-gradient( to top, black, black, #383838, black, black);
+  background: #4E4E4E;
   color: white;
-  text-align:right;
+  text-align: left;
+  border-radius: 4%/50%;
+
+
+}
+.rightbar .fa{
+  font-size: 2em;
+  color: #F4A726;
 }
 .rightbar:hover{
-  background: linear-gradient( to top,#383838, black, #383838);
+  background: black;
+
+  height: 46px;
+  margin: 1px 0 3px 0;
+}
+.maincontent{
+  height: 500px;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0 auto;
+  top: 7em;
+  text-align: center;
+}
+.mainobject{
+  text-align: center;
+  width: 300px;
+  height: 200px;
+  color: #202020;
+  display: inline-block;
+  margin: 3px auto;
+  padding: 5px 0;
+  box-sizing: content-box;
+  border-radius: 4%;
+  font-family: 'Rubik';
+  font-size: 2em;
+  background-image: url('bgrnd.jpg');
+  text-decoration: none;
+  border: 5px solid #F4A726;
+  box-shadow: 3px 3px 3px 1px gray;
+  filter: contrast(80%);
+  line-height: 30px;
+}
+.mainobject:hover{
+  filter:opacity(80%);
+}
+.mainobject .fa{
+  font-size: 4em;
+  color: #F4A726;
+}
+.mainobject p{
+  margin: 6px auto;
+}
+.leftnav{
+  width: 15em;
+  display: flex;
+  flex-direction: column;
+  align-content:stretch;
+  background: linear-gradient( to left ,#202020, #4E4E4E, #4E4E4E, #202020);
+  height: 120%;
+  position: fixed;
+  top:88px;
+  left: 0;
+  padding: 10px 10px;
+  margin: 0 0;
+  line-height: 20px;
+  color: white;
+  box-shadow: 1px 2px 2px 2px black;
+  border-right: 2px solid #F4A726;
+  font-family: 'Rubik';
+  font-weight:lighter;
+  font-size: 1.1em;
 }
