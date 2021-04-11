@@ -1,6 +1,13 @@
 body{
   background-image: url('bgrnd.jpg');
-
+  font-family: 'Rubik';
+}
+h1{
+  text-align: center;
+  color: #573804;
+  position: relative;
+  top: 4em;
+  letter-spacing: 2px;
 }
 .head-title #sara{
   height: 75px;
@@ -120,6 +127,7 @@ body{
   margin: 6px auto;
 }
 .leftnav{
+  justify-content:space-around;
   width: 15em;
   display: flex;
   flex-direction: column;
@@ -138,4 +146,77 @@ body{
   font-family: 'Rubik';
   font-weight:lighter;
   font-size: 1.1em;
+}
+/*contact page*/
+.contact-opt{
+  text-align: center;
+  width: 170px;
+  height:250px;
+  color: #202020;
+  display: inline-block;
+  margin: 3px auto;
+  padding: 5px;
+  box-sizing: content-box;
+  border-radius: 4%;
+  font-family: 'Rubik';
+  font-size: 1.2em;
+  background-image: url('bgrnd.jpg');
+  text-decoration: none;
+  border: 5px solid #F4A726;
+  filter: contrast(80%);
+  line-height: 30px;
+}
+.contact-wapp .fa{
+  font-size: 4em;
+  color: #00D200;
+}
+.contact-email .fa{
+  font-size: 4em;
+  color: #010169;
+}
+.contact-number .fa{
+  font-size: 4em;
+  color: #371238;
+}
+.message-box{
+  width: 400px!important;
+}
+/*paymant page*/
+.payment-opt{
+  text-align: center;
+  width: 170px;
+  height:200px;
+  color: #202020;
+  display: inline-block;
+  margin: 3px auto;
+  padding: 10px;
+  box-sizing: content-box;
+  border-radius: 4%;
+  font-family: 'Rubik';
+  font-size: 200%;
+  background-image: url('bgrnd.jpg');
+  text-decoration: none;
+  border: 5px solid #F4A726;
+  filter: contrast(80%);
+  line-height: 70px;
+}
+.payment-opt a{
+  text-decoration: none;
+  color: #573804;
+  flex-flow: row;
+
+}
+.secondary{
+  height: 500px;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0 auto;
+  top: 10em;
+  text-align: center;
+}
+#paypop{
+  visibility: hidden;
+  margin: 0 auto;
 }

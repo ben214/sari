@@ -42,27 +42,24 @@
     <a class="rightbar" href=""><i class="fa fa-comment"></i> צור קשר <i class="fa fa-arrow-left"></i></a>
  </div>
 
-  <div class="maincontent">
-    <div class="mainobject buttons">
-      <a href=""><i class="fa fa-user"></i></a>
-      <p>אזור אישי</p>
-    </div>
-    <div class="mainobject">
-      <a "href=""><i class="fa fa-file-o"></i> </a>
-      <p>מסמכים</p>
-    </div>
-    <div class="mainobject buttons">
-      <a href="payments.html" target="_blank"><i class="fa fa-shekel"></i></a>
-      <p>תשלומים</p>
-    </div>
-    <div class="mainobject buttons">
-      <a href="contact.html"><i class="fa fa-comment"></i></a>
-      <p>צור קשר</p>
+<h1>אפשרויות תשלום</h1>
+
+  <div class="maincontent secondary">
+
+    <a id="payment-monthly" class="payment-opt" onclick="paypop()" href="https://app.upay.co.il/API6/s.php?m=NWZJM3dmSFVzVGFLSHdIaVJkams2UT09" target="myframe">תשלום חודשי עבור דו"ח שנתי</a>
+
+    <a id="payment-yearly" class="payment-opt" onclick="paypop()" href="https://app.upay.co.il/API6/s.php?m=WmIrKzF5Um00MUlUZ0hoLzhuVy8xUT09" target="myframe">תשלום עבור דו"ח שנתי</a>
+
+    <a id="payment-opening" class="payment-opt" onclick="paypop()" href="https://app.upay.co.il/API6/s.php?m=K0l0TC9kK0p3ZlpDWXZaYzkyV0xyQT09" target="myframe">פתיחת עסק פטור/מורשה</a>
+
+    <div id="paypop" >
+      <iframe name="myframe" src="" width="600px" height="1500px"></iframe>
     </div>
 
   </div>
 
-   <div class="leftnav">
+
+  <div class="leftnav" class="payment-opt">
     <p>פרטים כללים על העבודה שלנו.</p>
     <p>  כאן אפשר לפרט יותר, או לספר סיפורים יפים.</p>
     <p>לעשות פה הודעות שממתגוללות כלפי מעלה?</p>
@@ -73,6 +70,6 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src=""></script>
+  <script src="payment.js"></script>
 </body>
 </html>
