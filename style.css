@@ -1,6 +1,7 @@
 body{
   background-image: url('bgrnd1.jpg');
   font-family: 'Rubik';
+
 }
 h1{
   text-align: center;
@@ -123,7 +124,7 @@ h1{
   padding: 8% 30px 8% 40px;
   margin: 0px 2px 0px 0;
   line-height: 40px;
-  font-family: 'Rubik';
+  font-family: 'Haim';
   font-weight:lighter;
   font-size: 1.3em;
   text-decoration: none;
