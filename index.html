@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head >
-  <link rel="icon" href="logoils.jpg">
+  <link rel="icon" href="logoils.ico">
    <title>
   שרה שרייבר רו"ח
    </title>
 
-  <link rel = "icon"  href="https://github.com/ben214/sari/blob/main/gold-ils.jpg" type = "image/x-icon">
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset = "utf-8" />
+  <meta charset = "utf-8"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik" rel="stylesheet">
@@ -24,18 +24,23 @@
 <body>
 
 
-     <div class="head-title">
+     <div class="head-title swing">
+
+       <div class="dot"></div>
       <a href="index.html">
         <img id="ils" src="C:\Users\1\Documents\GitHub\sari\logoils.jpg"><br>
         <img id="sara" src="C:\Users\1\Documents\GitHub\sari\logosara.jpg">
       </a>
+      <div class="rstring strings"></div>
+      <div class="lstring strings"></div>
       </div>
 
 
 
-  <div class="rightnav">
+  <div onmouseover="baropen()" onmouseout="barclose()" class="rightnav">
+    <img id="rightarr"  src="arrow.jpg" alt="">
     <a class="rightbar" href=""><i class="fa fa-id-badge"></i> אודות <i class="fa fa-arrow-left"></i></a>
-    <a class="rightbar" href=""><i class="fa fa-info"></i> מידע <i class="fa fa-arrow-left"></i></a>
+    <a class="rightbar" href="myaccount.html"><i class="fa fa-user"></i> החשבון שלי <i class="fa fa-arrow-left"></i></a>
     <a class="rightbar" href=""><i class="fa fa-file-o"></i> מסמכים <i class="fa fa-arrow-left"></i></a>
     <a class="rightbar" href="payments.html" target="_blank"><i class="fa fa-shekel"></i> תשלום <i class="fa fa-arrow-left"></i></a>
     <a class="rightbar" href="contact.html"><i class="fa fa-comment"></i> צור קשר <i class="fa fa-arrow-left"></i></a>
@@ -51,6 +56,6 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src=""></script>
+  <script src="main.js"></script>
 </body>
 </html>

@@ -15,9 +15,7 @@ h1{
   margin: 10px 0;
 }
 #sara:hover{
-    width: auto;
-    height: auto;
-    margin: auto;
+
 }
 .head-title #ils{
   height: 75px;
@@ -27,7 +25,9 @@ h1{
 
 .head-title{
   width: 400px;
-  background: #000000;
+  background-color: black;
+	background-image: radial-gradient(circle 450px at 50% , black, black, #282828, black, black);
+	background-repeat: no-repeat, no-repeat;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -37,13 +37,52 @@ h1{
   text-align: center;
   z-index: 1;
   text-decoration: none;
-  margin: 0 auto;
+  margin: 80px auto;
   filter: drop-shadow(3px 3px 8px black);
   border-radius: 50%;
+  filter: brightness(180%);
+  filter:drop-shadow( 0px 0px 25px #323232);
 }
+.rstring{
+  width: 200px;
+  transform:rotate(33deg);
+  position: absolute;
+  right:16px;
+}
+.lstring{
+  width: 200px;
+  position: absolute;
+  left:16px;
+  transform:rotate(-33deg);
+}
+.strings{
+  border: 1px solid #E9B14A;
+  opacity: 0.5;
+  top: 6px;
+}
+.dot{
+  height: 25px;
+  width: 25px;
+  background: radial-gradient(black, #E9B14A, black);
+  opacity: 0.5;
+  border-radius: 50%;
+  position: absolute;
+  top: -48px;
+  right: 188px;
+  z-index: 2;
+  opacity: 1;
+}
+.swing{
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center -50px;
 
+}
+@keyframes swing {
+    0% { transform: rotate(2deg); }
+    100% { transform: rotate(-2deg); }
+}
 .rightnav{
-  transition: right 0.3s ease 60ms;
+  transition: right 0.4s ease 80ms;
   position: fixed;
   width: 15.1em;
   display: flex;
@@ -55,35 +94,52 @@ h1{
   right: -14em;
   padding: 3px -3px;
   margin: 0 -1px;
+  animation: slide 0.5s;
+  animation-delay: 2s;
+  animation-duration: 4s;
+  transition: right 0.4s ease 80ms;
+  z-index: 1
 }
-.rightnav:hover{
-  right: 0;
+@keyframes slide {
+    0%  { right: -14em; }
+    50% { right: 0; }
+    100%  { right: -14em; }
 }
+#rightarr{
+  height: 90%;
+  width: 2em;
+  position: absolute;
+  right: 14em;
+  top: 0;
+  display: flex;
+  opacity: 1;
+  transition: opacity 0.3s ease 30ms;
+}
+
 .rightbar{
   height: 45px;
   display: block;
   border: 1px solid #F4A726;
   padding: 8% 30px 8% 40px;
-  margin: 1px 2px 4px 0;
+  margin: 0px 2px 0px 0;
   line-height: 40px;
   font-family: 'Rubik';
   font-weight:lighter;
   font-size: 1.3em;
   text-decoration: none;
   background: #4E4E4E;
-  color: white;
+  color: #F4A726;
   text-align: left;
   border-radius: 4%/4%;
 }
 .rightbar .fa{
-  font-size: 2em;
+  font-size: 1em;
   color: #F4A726;
 }
 .rightbar:hover{
   background: black;
-
   height: 46px;
-  margin: 1px 0 3px 0;
+  margin: 0 0 3px 0;
 }
 .maincontent{
   height: 500px;
@@ -226,8 +282,9 @@ h1{
   text-align: center;
 }
 #paypop{
-  display:none;
-  margin: 0 auto;
+  display: none;
+  margin: 50px auto;
+
 }
 iframe{
   text-align: center;
@@ -235,4 +292,13 @@ iframe{
   font-family: 'Rubik';
   border: 2px solid #F4A726;
   background: #F4A726;
+}
+.sign button{
+  width: 200px;
+  height: 50px;
+  background: black;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
 }
