@@ -24,32 +24,27 @@
 <body>
 
 
-     <div class="head-title">
-      <a href="index.html">
-        <img id="sara"
-        src="C:\Users\1\Documents\GitHub\sari\logosara.jpg"><img id="ils"
-        src="C:\Users\1\Documents\GitHub\sari\logoils.jpg">
-      </a>
-      </div>
 
 
 
-  <div class="rightnav">
-    <a class="rightbar" href=""><i class="fa fa-id-badge"></i> אודות <i class="fa fa-arrow-left"></i></a>
-    <a class="rightbar" href=""><i class="fa fa-info"></i> מידע <i class="fa fa-arrow-left"></i></a>
-    <a class="rightbar" href=""><i class="fa fa-file-o"></i> מסמכים <i class="fa fa-arrow-left"></i></a>
-    <a class="rightbar" href="payments.html" target="_blank"><i class="fa fa-shekel"></i> תשלום <i class="fa fa-arrow-left"></i></a>
-    <a class="rightbar" href=""><i class="fa fa-comment"></i> צור קשר <i class="fa fa-arrow-left"></i></a>
+
+  <div onmouseover="baropen()" onmouseout="barclose()" class="rightnav">
+    <img id="rightarr"  src="arrow.jpg" alt="">
+    <a class="rightbar" href=""><i class="fa fa-id-badge"></i> אודות </a>
+    <a class="rightbar" href="signin.html"><i class="fa fa-user"></i> החשבון שלי</a>
+    <a class="rightbar" href=""><i class="fa fa-file-o"></i> מסמכים</a>
+    <a class="rightbar" href="payments.html" target="_blank"><i class="fa fa-shekel"></i> תשלום </a>
+    <a class="rightbar" href="contact.html"><i class="fa fa-comment"></i> צור קשר </a>
  </div>
 
-<h1>דרכים ליצירת קשר</h1>
+<h1>התחבר</h1>
 
   <div class="maincontent secondary">
 
 
   <div class="sign">
     <button type="button" name="sign">
-   <a href="signin.html" target="signframe">הירשמו</a>
+   <a href="" target="signframe">הירשמו</a>
     </button><br>
     <iframe name="signframe" src="" width="500" height="600"></iframe>
 
@@ -62,6 +57,6 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src=""></script>
+  <script src="main.js"></script>
 </body>
 </html>

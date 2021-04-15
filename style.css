@@ -74,43 +74,44 @@ h1{
   opacity: 1;
 }
 .swing{
-  animation: swing ease-in-out 1s infinite alternate;
+  animation: swing ease-in-out 2s ;
   transform-origin: center -50px;
 
 }
 @keyframes swing {
     0% { transform: rotate(2deg); }
-    100% { transform: rotate(-2deg); }
+    50% { transform: rotate(-4deg)}
+    100% { transform: rotate(0deg); }
 }
 .rightnav{
-  transition: right 0.4s ease 80ms;
+  transition: right 0.6s ease 100ms;
   position: fixed;
-  width: 15.1em;
+  width: 11em;
   display: flex;
   flex-direction: column;
   align-content:stretch;
   background: linear-gradient( to left ,#202020, black, black, #202020);
   height: 123%;
   top:0;
-  right: -14em;
-  padding: 3px -3px;
-  margin: 0 -1px;
+  right: -11em;
+  padding: 0;
+  margin: 0 auto;
   animation: slide 0.5s;
   animation-delay: 2s;
-  animation-duration: 4s;
+  animation-duration: 2s;
   transition: right 0.4s ease 80ms;
   z-index: 1
 }
 @keyframes slide {
-    0%  { right: -14em; }
-    50% { right: 0; }
-    100%  { right: -14em; }
+    0%  { right: -11em; }
+    50% { right: -4em; }
+    100%  { right: -10em; }
 }
 #rightarr{
   height: 90%;
   width: 2em;
   position: absolute;
-  right: 14em;
+  right: 11em;
   top: 0;
   display: flex;
   opacity: 1;
@@ -120,18 +121,17 @@ h1{
 .rightbar{
   height: 45px;
   display: block;
-  border: 1px solid #F4A726;
+  border: none;
   padding: 8% 30px 8% 40px;
-  margin: 0px 2px 0px 0;
+  margin:  0;
   line-height: 40px;
-  font-family: 'Haim';
+  font-family: 'Rubik';
   font-weight:lighter;
-  font-size: 1.3em;
+  font-size: 1em;
   text-decoration: none;
   background: #4E4E4E;
   color: #F4A726;
   text-align: left;
-  border-radius: 4%/4%;
 }
 .rightbar .fa{
   font-size: 1em;
@@ -289,10 +289,10 @@ h1{
 }
 iframe{
   text-align: center;
-  border-radius: 8px;
+  border-radius: 4px;
   font-family: 'Rubik';
-  border: 2px solid #F4A726;
-  background: #F4A726;
+  border: none;
+  background: none;
 }
 .sign button{
   width: 200px;

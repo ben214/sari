@@ -1,10 +1,23 @@
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="style.css">
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="492584612154-44dqepurhe78colj96391a3tsho61e01.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="492584612154-cg6c5g00fbecc34l2u28ld7pp3j9f7ql.apps.googleusercontent.com">
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
+
+    <div onmouseover="baropen()" onmouseout="barclose()" class="rightnav">
+      <img id="rightarr"  src="arrow.jpg" alt="">
+      <a class="rightbar" href=""><i class="fa fa-id-badge"></i> אודות </a>
+      <a class="rightbar" href="myaccount.html"><i class="fa fa-user"></i> החשבון שלי</a>
+      <a class="rightbar" href=""><i class="fa fa-file-o"></i> מסמכים</a>
+      <a class="rightbar" href="payments.html" target="_blank"><i class="fa fa-shekel"></i> תשלום </a>
+      <a class="rightbar" href="contact.html"><i class="fa fa-comment"></i> צור קשר </a>
+   </div>
+
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">sign in</div>
     <script>
       function onSignIn(googleUser) {
@@ -23,4 +36,5 @@
       }
     </script>
   </body>
+    <script src="main.js"></script>
 </html>

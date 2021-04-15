@@ -5,5 +5,5 @@ function baropen(){
 
 function barclose(){
   $("#rightarr").css("opacity", "1");
-  $(".rightnav").css("right", "-14em");
+  $(".rightnav").css("right", "-11em");
 }
