@@ -98,6 +98,18 @@ html{
     50% { transform: rotate(-1deg)}
     100% { transform: rotate(1deg); }
 }
+.menu{
+  color: #F3DA8F;
+  font-size: 4vh!important;
+  position: relative;
+  display: flex;
+  align-self: flex-end;
+  left: 3px;
+  margin: 3px;
+  font-weight: 50;
+  transition: rotate(90deg) 1s ease-out;
+  display: none!important;
+}
 .rightnav{
   transition: right 0.6s ease 100ms;
   position: fixed;
@@ -129,12 +141,14 @@ html{
   background: #4E4E4E;
   color: #EFC959;
   text-align: left;
+  justify-content:center;
+
 }
 .rightbar .fa{
   font-size: 3vw;
   color: #EFC959;
-  position: absolute;
-  right: 1.3vw;
+  position: relative;
+  float:right;
 }
 .rightbar:hover{
   background: black;
@@ -160,18 +174,17 @@ html{
 .mainobject{
   display: flex;
   flex-direction: column;
-  text-align: center;
   position: relative;
   width: 13vw;
   height: 20vw;
   color: #F2D682;
   filter: drop-shadow(1px 1px 2px black);
-  margin:  5% 1%;
+  margin: 5% 1%;
   padding:5%;
   box-sizing: border-box;
   border-radius: 2%;
-  font-size: 1.7vw;
-  line-height: normal;
+  font-size: 1.5vw;
+  line-height: 150%;
   background-image: url('bgrnd1.jpg');
   text-decoration: none;
   align-self:stretch;
@@ -190,16 +203,17 @@ html{
   font-size: 5vw;
   color: #EFC959;
   filter: drop-shadow(0.3mm 0.3mm 0.1mm white);
+  margin: 0;
 }
 .mainobject p{
   margin: 1em auto;
   font-weight: 50;
+  margin: 0;
 }
 /*contact page*/
 
 .contact-opt{
   padding:2%;
-  line-height: auto;
 }
 .contact-opt .fa{
 
@@ -219,9 +233,9 @@ html{
 }
 /*paymant page*/
 .payment-opt{
-  font-size: 4vh;
-  line-height: 5vw;
-  align-items: center;
+  position: relative;
+  height: 15vw;
+  line-height: 150%;
   justify-content: center;
   font-weight: 40;
 }
@@ -282,14 +296,14 @@ h1{
 
 
 /*mobile design*/
-@media only screen and (max-width: 600px) {
-h1 {
-    font-size: 4vw;
+@media only screen and (max-width: 650px) {
+ h1 {
+    font-size: 4.5vh;
     background: -webkit-linear-gradient(black, #7D5E20 10%, black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-.rightbar{
+ .rightbar{
   height:auto;
   display: block;
   border-top: 0.1mm solid #EFC959;
@@ -301,7 +315,10 @@ h1 {
   color: #EFC959;
   text-align: center;
 }
-.rightnav{
+.menu{
+  display: none;
+}
+ .rightnav{
   transition: right 0.6s ease 100ms;
   position:fixed;
   width: 17vw;
@@ -315,13 +332,13 @@ h1 {
   right: 0;
   pointer-events: all;
 }
-body{
+ body{
   padding: 0px;
   margin: 0;
   height: 100%;
   width: 100%;
 }
-.head-title #sara, .head-title2 #sara{
+ .head-title #sara, .head-title2 #sara{
   height: 50px;
   width: 90px;
   margin: 0 0;
@@ -344,8 +361,7 @@ body{
 .head-title, .head-title2{
   width: 100%;
   background-color: black;
-	background-image: ;
-  height: 10vh;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -396,10 +412,10 @@ body{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: auto;
+
   justify-content:space-between;
   text-align: center;
-  top: 5%;
+  top: 10vh;
   left:auto;
   right: 8.5%;
   transform: translate( 0%);
@@ -411,16 +427,16 @@ body{
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  width: 70%;
+  width: 60%;
   height: 20%;
   color: #F2D682;
   filter: drop-shadow(1px 1px 0.4mm black);
   margin: 0.3% auto;
-  padding: 3% 8%;
+  padding: 4% 6%;
   box-sizing: border-box;
-  border-radius: 1%;
+  border-radius: 3%;
   line-height: 150%;
-  font-size: 1.8vw;
+  font-size: 3vw;
   background-image: url('bgrnd1.jpg');
 }
 .mainobject .fa{
@@ -437,7 +453,7 @@ body{
   box-shadow: 0.1mm 0.1mm 0.1mm 0.6mm #EFC959 inset;
 }
 .payment-opt{
-  padding: auto;
+  font-size: 3vh;
 }
 #paypop{
   float: left;
@@ -456,11 +472,14 @@ body{
   display: flex;
   flex-direction: column;
   align-items:center;
+  justify-content: center;
+
 }
 .message-box p{
   margin-bottom: 3%;
 }
 input, textarea{
   font-size: 1em;
-  max-width: 100%
+  max-width: 100%;
+  
 }
