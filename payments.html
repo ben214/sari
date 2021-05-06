@@ -1,4 +1,7 @@
-
+<?php
+require('db.php');
+include("auth_session.php");
+?>
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head >
@@ -24,6 +27,7 @@
 
 
 </head>
+
 <body class="body-other">
   <a href="index.html">
     <div class="head-title2">
@@ -33,7 +37,7 @@
    </a>
 
 
-        <div class="rightnav">
+        <div class="rightnav hide">
           <i class="menu fa fa-bars"></i>
           <a class="rightbar" href="signin.html"><i class="fa fa-user"></i> החשבון שלי</a>
           <a class="rightbar" href=""><i class="fa fa-file-o"></i> מסמכים</a>
