@@ -16,7 +16,7 @@ setInterval(moveIt, 3500);
       prev = active[i];
 
       playing.classList.remove("active");
-      
+
       console.log("restart!!" + active[max-1].style.display);
       playing = active[0];
 
@@ -30,12 +30,9 @@ setInterval(moveIt, 3500);
 }
 
 
-// if (i === max-1) {
-//   i=0;
-//   playing = active[i];
-//   console.log( "STARTINg AGAIN!!!");
-// }else{
-//
-//   i++;
-//   console.log(active[max-1]);
-// }
+var toggling = $("#toggling");
+  function toggleHide() {
+
+     toggling.toggle(300);
+    $(".read1 >i").toggleClass("rotate", 2000);
+  }
