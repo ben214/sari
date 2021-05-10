@@ -17,14 +17,15 @@
   background-image: url('bgrnd.jpg');
   background-repeat: repeat;
   font-family: 'Secular', sans-serif;
-  font-weight: 50;
+  font-weight: 400;
   box-sizing: border-box;
   margin: 0;
+  overflow-x: hidden;
 }
 
 #sara{
   height: 40%;
-  width: 70%;
+  width: 55%;
   pointer-events: all;
   display: block;
   border-radius: 20%;
@@ -39,20 +40,17 @@
  filter: contrast(130%);
 }
 .head-title{
-    position: absolute;
-    width: 25%;
+    position: relative;
+    width: 35%;
     background-color: black;
     height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
     text-align: center;
     text-decoration: none;
     padding-top: 2%;
-    top: 3%;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 3% auto;
     border-radius: 100%;
     border: 1mm solid #EFC959;
 }
@@ -145,9 +143,10 @@
  display: flex;
  flex-direction: column;
  align-items:flex-start;
- position: absolute;
+ position: fixed;
  top: 8vh;
  right: 0;
+ z-index: 1000;
  /* background: linear-gradient( #F4DB90 , #7D5E20,  #F4DB90); */
 
 }
@@ -206,21 +205,23 @@
 .magishim,.mekablim{
   line-height: 2.4rem;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   flex-direction: row;
-  justify-content:flex-start;
+  /* justify-content:flex-start; */
   color: #3F2C0B;
   margin-bottom: 5vh;
 }
 .magish,.mekabel{
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items:flex-start;
   justify-content:space-between;
   padding: 2vh;
   margin: 1vh;
-  text-align: right;
-  font-size: 1.5vw;
+  text-align: center;
+  font-size: 1.7vw;
+  font-weight: bolder;
   border-right: 0.1mm solid #9F863B;
   color: #3F2C0B;
 }
@@ -234,34 +235,39 @@
 .mekabList{
   font-size: 2vw;
 }
+li{
+  text-align: right;
+}
 .uline{
   background: #EFC959;
   font-weight: 550;
   font-size: 1.3em;
-  margin: 2vh;
+  margin: 2vh auto;
 }
 #reading ol{
   font-size: inherit;
 }
 .notice{
   border-top: #EFC959 solid 0.7mm;
-   font-size: 1.2vw;
+   font-size: 1.5vw;
    background: black;
    color: #F4DB90;
    padding: 2vh;
 }
 .notice2{
   border-top: black solid 0.7mm;
-   font-size: 1.2vw;
+   font-size: 1.5vw;
    background: #EFC959;
    color: #342C13;
    padding: 2vh;
+   margin: 0 auto;
 }
 .mekabel p:first-child{
   align-self: flex-start;
   background: #ECD389;
-  padding: 8%;
-  margin: 0;
+  padding: 8% 1%;
+  margin: 0 auto;
+  border-radius: 5px;
 }
 .read:hover, .read-inner1:hover{
   filter: brightness(120%);
@@ -280,7 +286,7 @@
   font-weight: 300;
   line-height: 1.2em;
   margin: auto;
-  box-shadow: 1px 1px 1px black inset);
+  box-shadow: 1px 1px 13px  1px #9F863B inset;
   background-image: url(bgrnd.jpg);
   border: 0.2mm solid #F4DB90;
   border-radius:  0;
@@ -295,6 +301,7 @@
 .toggling i{
   color: #EFC959;
   font-size: 2em;
+  transition: transform 0.5s ;
 }
 .rotate{
   transform: rotate(-90deg);
@@ -340,24 +347,19 @@
   display: block;
   margin-bottom: 4%;
   box-sizing: border-box;
-  width:100%;
+  width:2.5em;
+  height: 2.5em;
   filter: drop-shadow(0.1mm 0.1mm 1mm white);
  }
  .phone img{
   filter:hue-rotate(67deg);
  }
   .icons img {
-    width: 50px;
+   height:100%;
+   width:100%;
   }
   .icons :hover{
    filter: drop-shadow(0.1mm 0.1mm 1mm black);
-  }
-  .mail img{
-   margin-bottom: 4%;
-   margin-top: 4%;
-  }
-  .mail img, .fb img{
-   width: 45px;
   }
 
 .head-title2{
@@ -715,17 +717,19 @@ h1 {
 }
 .maincontent{
   width: 80%;
-  position: relative;
+  /* position: relative; */
   height: auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content:space-between;
   text-align: center;
-  top: 19vh;
+  top: 30vh;
   left: auto;
   transform: translate( 0%);
   align-self: center;
+  pointer-events: all;
+
 }
 .secondary{
   width: 100%;
@@ -823,25 +827,27 @@ input, textarea{
 #iconbar, #iconbar2{
   display: flex;
   flex-direction: row;
-  justify-content:flex-start;
+  justify-content:center;
+  float: none;
   text-align: center;
-  align-items:stretch;
+  align-items:baseline;
   border: none;
   border-top: 0.4mm solid black;
   border-radius: 0;
-  padding: 0.6em;
   position:fixed;
   bottom: 0;
   top: auto;
   left:0;
   width: 100%;
-  height: 13vh;;
+  height:3.5em;
   background: linear-gradient(to right bottom, #7D5E20, #F4DB90, #7D5E20);
  }
  .icons{
-  margin: 0 auto;
-  height: 100%;
-  width: 25%;
+  position: relative;
+  top:0;
+  margin: auto;
+  width:2.5em;
+  height: 2.5em;
  }
 
 #readingBar{
@@ -850,14 +856,14 @@ input, textarea{
  float: left;
  flex-direction: column;
  align-items:flex-start;
- position: absolute;
+ position: fixed;
  top: 14vh;
  right: 0;
- z-index: 0;
+ z-index: 200;
 }
 #reading{
   margin: 1em auto 12vh;
-  
+
 }
 /* .read1{
   height: 40px;
@@ -943,6 +949,7 @@ input, textarea{
   flex-direction: column;
 }
 .magish,.mekabel{
+  font-size: 3vh;
   border-right: none;
   border-bottom: 0.1mm solid #9F863B;
 }
