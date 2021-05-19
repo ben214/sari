@@ -53,6 +53,7 @@
     margin: 3% auto;
     border-radius: 100%;
     border: 1mm solid #EFC959;
+    justify-content: space-evenly;
 }
 .head-title:hover{
   border: 1mm solid black;
@@ -93,7 +94,7 @@
   background: black;
   color: #F4DB90;
   font-size: 300%;
-  font-weight: 600;
+  font-weight: 200;
   justify-content: center;
   align-self:center;
 }
@@ -198,9 +199,10 @@
    margin: 0 auto;
  }
  #reading h2{
+   font-size: 2.5em;
    line-height: 1em;
-   margin: 3vh;
-   text-align: right;
+   margin: 1em auto;
+   text-align: center;
  }
 .magishim,.mekablim{
   line-height: 2.4rem;
@@ -221,23 +223,28 @@
   margin: 1vh;
   text-align: center;
   font-size: 1.7vw;
-  font-weight: bolder;
+  font-weight: 200;
   border-right: 0.1mm solid #9F863B;
   color: #3F2C0B;
+  line-height: 1.8em;
 }
 .aread{
   text-decoration: underline;
   text-decoration-color: #9F863B;
 }
 .magishList{
-  font-weight: 600;
+
 }
 .mekabList{
-  font-size: 2vw;
+
 }
 li{
+  list-style-type:square;
+  text-indent: -1%;
   text-align: right;
+  font-size: 1em;
 }
+
 .uline{
   background: #EFC959;
   font-weight: 550;
@@ -245,7 +252,7 @@ li{
   margin: 2vh auto;
 }
 #reading ol{
-  font-size: inherit;
+
 }
 .notice{
   border-top: #EFC959 solid 0.7mm;
@@ -256,7 +263,8 @@ li{
 }
 .notice2{
   border-top: black solid 0.7mm;
-   font-size: 1.5vw;
+   font-size: 0.9em;
+   font-weight: bolder;
    background: #EFC959;
    color: #342C13;
    padding: 2vh;
@@ -264,6 +272,7 @@ li{
 }
 .mekabel p:first-child{
   align-self: flex-start;
+  font-weight: 600;
   background: #ECD389;
   padding: 8% 1%;
   margin: 0 auto;
@@ -891,19 +900,19 @@ input, textarea{
 }
 .readHead{
   position: relative;
-  right: 0;
-  height: 4vh;
-  width: 20vw;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content:space-around;
-  padding: 0.8mm;
-  font-size: 1vh;
-  font-weight: 100;
-  filter: drop-shadow(1px 1px 3px black);
-  background:#F4DB90;
-  border-radius:  1em 0 0 0;
+    right: 0;
+    /* height: 2em; */
+    width: 9em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    padding: 0.3mm;
+    font-size: 0.5em;
+    font-weight: 100;
+    filter: drop-shadow(1px 1px 3px black);
+    background: #F4DB90;
+    border-radius: 1em 0 0 0;
 }
 .readHeadRead{
     border-radius:  1em 0 0 1em;
@@ -911,15 +920,15 @@ input, textarea{
 .read{
   position: relative;
   right: 0;
-  height: 9vh;
-  width: 38vw;
+  height: 2em;
+  width: 8em;
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content:center;
   justify-content:space-between;
-  font-size: 6vw;
-  font-weight: 400;
+  font-size: 14pt;
+    font-weight: 700;
   line-height: 0.5vh;
   filter: drop-shadow(1px 1px 1px black);
   background: linear-gradient( #F4DB90 , #7D5E20,  #F4DB90);
@@ -949,7 +958,12 @@ input, textarea{
   flex-direction: column;
 }
 .magish,.mekabel{
-  font-size: 3vh;
+  font-size: 1em;
   border-right: none;
   border-bottom: 0.1mm solid #9F863B;
+}
+.mekabel p:first-child{
+  padding: 8% 8%;
+  margin:  auto;
+  display: block;
 }
