@@ -45,27 +45,57 @@ include("auth_session.php");
           <a class="rightbar" href="contact.html"><i class="fa fa-comment"></i> צור קשר </a>
         </div>
 
-<div id="readingBar">
+        <div id="readingBar">
           <div class="readHead">
-            <img id="info" rel="icon" src="infoi.png">
+            <i class="fa fa-info-circle"></i>
            מידע בנושאים:
           </div>
-          <div class="read1 read" onclick="toggleHide()">
+
+
+
+
+         <!--
+            מענק עבודה ----------------------------------------->
+            <button type="btn" class="navbtn">
+
+            <div class="read1 read">
             <div class="maanak">מענק עבודה</div>
             <i class="fa fa-chevron-circle-left"></i>
-          </div>
+             </div>
            <div class="toggling" id="toggling" >
             <a href="maanak1.html" class="maanakAsk read-inner1">
-               הגשת בקשה למענק עבודה
+               זכאות למענק עבודה
             <i class="fa fa-chevron-circle-left"></i>
             </a>
             <a href="maanak2.html" class="maanakAsk read-inner1">
-              זכאות למענק עבודה
+              הגשת בקשה למענק עבודה
              <i class="fa fa-chevron-circle-left"></i>
             </a>
            </div>
+          </button>
 
-</div>
+
+           <!--
+              דמי לידה----------------------------------------->
+              <button type="btn" class="navbtn">
+           <div class="read1 read">
+             <div class="maanak">דמי לידה</div>
+             <i class="fa fa-chevron-circle-left"></i>
+           </div>
+            <div class="toggling" id="toggling" >
+             <a href="leida1.html" class="maanakAsk read-inner1">
+              זכאות דמי לידה
+             <i class="fa fa-chevron-circle-left"></i>
+             </a>
+             <a href="maanak2.html" class="maanakAsk read-inner1">
+              חישוב דמי לידה – לעובדת עצמאית
+              <i class="fa fa-chevron-circle-left"></i>
+             </a>
+            </div>
+            </button>
+
+
+        </div>
 
   <div class="maincontent secondary">
     <span class="backhead">
@@ -104,6 +134,9 @@ include("auth_session.php");
     </div>
   </div>
 
+  <a id="homebtn" href="index.html">
+  <i class="fa fa-home"></i>
+  </a>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

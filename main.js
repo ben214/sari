@@ -8,7 +8,7 @@ setInterval(moveIt, 3500);
  var max = active.length;
  var prev = active[i];
  var playing = active[i +1];
-   console.log("before "+i);
+   // console.log("before "+i);
 
    if (i == max-1) {
       i=0;
@@ -26,13 +26,32 @@ setInterval(moveIt, 3500);
    }
 
    playing.classList.add("active");
-   console.log("after "+ i);
+   // console.log("after "+ i);
 }
 
+//   $(this).children("read").children(i).toggleClass("rotate", 1000)
+// };
+//
+// })
 
-var toggling = $("#toggling");
-  function toggleHide() {
 
-     toggling.toggle(300);
-    $(".read1 >i").toggleClass("rotate", 2000);
+
+  $('.navbtn').click(openthis)
+  function closeAll(){
+    $('.toggling').hide()
+    $(this).unbind('click', closeAll),
+      $('.navbtn').on('click', openthis)
+        $(".read").children('i').removeClass("rotate", 1000)
+
   }
+
+  function openthis(){
+     closeAll()
+
+      $(this).find('.toggling').show(100),
+      $(this).children(".read").children('i').toggleClass("rotate", 1000)
+      console.log('block!!');
+      $(this).unbind('click', openthis),
+        $(this).on('click', closeAll)
+
+}
