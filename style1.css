@@ -151,21 +151,20 @@
  /* background: linear-gradient( #F4DB90 , #7D5E20,  #F4DB90); */
 
 }
-.readHead {
-    position: relative;
-    right: 0;
-    height: 23px;
-    width: 126px;
-    color: #6b5813;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-    font-size: 15px;
-    font-weight: 200;
-    filter: drop-shadow(0.1mm 0.1mm 0.5mm black);
-    background: #F4DB90;
-    border-radius: 10px 0 0 0;
+.readHead{
+  position: relative;
+  right: 0;
+  height: 30px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  font-size: 1em;
+  font-weight: 200;
+  filter: drop-shadow(0.1mm 0.1mm 0.5mm black);
+  background:#F4DB90;
+  border-radius: 1em 0 0 0;
 }
 .readHeadRead{
     border-radius:  1em 0 0 1em;
@@ -983,30 +982,16 @@ input, textarea{
   z-index: -400;
 }
 .readHead{
-    position: relative;
-    color: #6b5813;
-    right: 0;
-    height: 13px;
-    width: 90px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-    font-size: 8px;
-    font-weight: 200;
-    filter: drop-shadow(0.1mm 0.1mm 0.5mm black);
-    background: #F4DB90;
-    border-radius: 5px 0 0 0;
+  display: none;
 }
-
 .readHeadRead{
     border-radius:  1em 0 0 1em;
 }
 .read{
   position: relative;
     right: 0;
-    height: auto;
-    width: 90px;
+    height: 1em;
+    width: 6em;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1014,7 +999,7 @@ input, textarea{
     justify-content: space-between;
     font-size: 1em;
     font-weight: 700;
-    /*line-height: 0.5vh;*/
+    line-height: 0.5vh;
     filter: drop-shadow(1px 1px 1px black);
     background: linear-gradient( #F4DB90 , #7D5E20, #F4DB90);
     border-radius: 1em 0 0 1em;
