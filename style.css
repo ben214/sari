@@ -273,7 +273,7 @@
   margin: 1vh;
   text-align: center;
   font-size: 1.7vw;
-  font-weight: 200;
+  font-weight: 400;
   border-right: 0.1mm solid #9F863B;
   color: #3F2C0B;
   line-height: 1.8em;
@@ -948,7 +948,7 @@ input, textarea{
 #reading p {
     padding: .5em 1em;
     font-size: .85em;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 1.8em;
 }
 #reading h2 {
