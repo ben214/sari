@@ -6,6 +6,9 @@
   margin:0;
   overflow-x: hidden;
  }
+ .hide{
+   display: none;
+ }
 .body-main{
   background-image: url('bgrnd.jpg');
   background-repeat:repeat;
@@ -1056,4 +1059,7 @@ input, textarea{
   padding: 8% 8%;
   margin:  auto;
   display: block;
+}
+.answ{
+  display: none;
 }

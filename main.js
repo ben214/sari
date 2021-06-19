@@ -26,13 +26,10 @@ setInterval(moveIt, 3500);
    }
 
    playing.classList.add("active");
-   // console.log("after "+ i);
+
 }
 
-//   $(this).children("read").children(i).toggleClass("rotate", 1000)
-// };
-//
-// })
+
 
 
 
@@ -53,5 +50,43 @@ setInterval(moveIt, 3500);
       console.log('block!!');
       $(this).unbind('click', openthis),
         $(this).on('click', closeAll)
+}
+
+$(document).ready(function(){
+
+  console.log($('.read-inner1').css('fontFamily'));
+
+$('.bottomarr').click(clsallansw)
+$('.quest').click(openanswer)
+function openanswer() {
+  var answer = $(this).parents('.questlist').children('.answ')
+  clsallansw()
+  $(this).children('.arrowbox').addClass('arrowboxopen'),
+  answer.slideDown(300),
+  $(this).attr('id', 'activequest')
+  $(this).unbind('click', openanswer)
+    // $('html, body').animate({
+    //    scrollTop: $('#activequest').offset().top
+    //  }, 300)
+    window.scrollTo(0, 180)
+  $(this).click(clsallansw)
+  console.log('openanswer')
+  console.log($('#activequest').length);
+}
+function clsallansw(){
+   $('.answ').css('display', 'none'),
+   $('.quest').unbind('click', clsallansw),
+   $('.quest').click(openanswer)
+   $('.arrowbox').removeClass('arrowboxopen')
 
 }
+// function closeanswer() {
+//   $('.quest').click(openanswer)
+//   $('.answ').hide(300),
+//   $('.arrowbox').removeClass('arrowboxopen')
+//   $('.quest').unbind('click', closeanswer)
+//   console.log('closeanswer')
+// }
+
+
+})

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alef&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
- html{
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700&display=swap');
+html{
   padding: 0;
   margin:0;
   overflow-x: hidden;
@@ -9,20 +10,22 @@
 .body-main{
   background-image: url('bgrnd.jpg');
   background-repeat:repeat;
-  font-family: 'Secular', sans-serif;
+  font-family: 'Heebo', sans-serif;
   /* box-sizing: border-box; */
   margin: 0;
 }
 .body-other{
   background-image: url('bgrnd.jpg');
   background-repeat: repeat;
-  font-family: 'Secular', sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-weight: 400;
   box-sizing: border-box;
   margin: 0;
   overflow-x: hidden;
 }
-
+.italic{
+  font-style: italic;
+}
 #sara{
   height: 40%;
   width: 55%;
@@ -94,7 +97,7 @@
   background: black;
   color: #F4DB90;
   font-size: 300%;
-  font-weight: 200;
+  font-weight: 400;
   justify-content: center;
   align-self:center;
 }
@@ -162,7 +165,7 @@
     text-align: center;
     justify-content: space-around;
     font-size: 15px;
-    font-weight: 200;
+    font-weight: 400;
     filter: drop-shadow(0.1mm 0.1mm 0.5mm black);
     background: #F4DB90;
     border-radius: 10px 0 0 0;
@@ -189,27 +192,108 @@
   color: #F4DB90
 }
 #reading{
+  position: relative;
   margin-top: 7vh;
   border-right: 0.24mm solid #9F863B;
   border-left: 0.2mm solid #9F863B;
   color: #3F2C0B;
   background: #DEE2E2;
-  background-blend-mode: lighten;:
+  background-blend-mode: lighten;
+  min-width: 100%;
  }
+ .questlist{
+   margin: 0 auto;
+   max-width: 95%;
+   position: relative;
+   border-right: 0.4mm solid #EFD58B;
+   border-left: 0.4mm solid #EFD58B;
+   box-shadow: 1px 1px 4px 1px black;
+   border-radius: 20px;
+ }
+ #reading .quest{
+   margin: .5em auto;
+   border-radius: 20px;
+   padding: 1em;
+   padding-left: 3em;
+   text-align: center;
+   background: #EFD58B;
+ }
+ #reading .quest:hover{
+   background: #BB9F5A
+ }
+ .answ{
+   display: none;
+   padding-bottom: 1.5em;
+ }
+ .arrowbox {
+     transform: none;
+     transition: .3s ease-in-out;
+     position: absolute;
+     top: 0;
+     left: 0;
+     display: flex;
+     justify-content: space-around;
+     padding: 1em;
+     margin: 0;
+     overflow: hidden;
+     flex-wrap: wrap;
+     flex-direction: row;
+     align-content: center;
+     align-items: center;
+     pointer-events: all;
+     cursor: pointer;
+     float: left;
+ }
+.arrowboxopen{
+    transform: rotate(180deg);
+    transition: .3s ease-in-out;
+}
+.arrow {
+    opacity: 1;
+    filter:drop-shadow(1px 1px 3px white);
+    position: relative;
+    top: 0;
+    left: 0px;
+    height: 1em;
+    width: 1em;
+    border-bottom: 3px solid #BB9F5A;
+    border-left: 3px solid #BB9F5A;
+    transform: rotate(-45deg);
+}
+.bottomarr{
+  transform: none;
+  position: relative;
+  display: block;
+  justify-content: space-around;
+  padding: 1em;
+  margin: 2em auto 0;
+  overflow: hidden;
+  width: fit-content;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  pointer-events: all;
+  cursor: pointer;
+  transform: rotate(-180deg);
+}
+.bottomarr:hover{
+  filter: drop-shadow(1px 1px 6px black);
+}
  #reading p{
    padding:1em;
-   font-size: 1.14em;
-   font-weight: 100;
+   font-size: 1.4rem;
+   font-weight: 400;
    line-height: 1.8em;
+
  }
  #reading img{
-   width: 900px;
+   width: 100%;
    height: auto;
    margin: 0 auto;
  }
  #reading h2{
    font-size: 1.8em;
-   font-weight:400;
+   font-weight:600;
     line-height: 1.6em;
     margin: 1em auto;
     text-align: center;
@@ -219,24 +303,43 @@
    max-width: 90%;
    border-right: 0.1mm #F1C27F solid;
    border-left: 0.1mm #F1C27F solid;
-   margin: 0 auto;
+   margin: 5mm auto;
    background: #F7F7F7;
-   text-align: right;
+   text-align: justify;
    padding: 1em;
    line-height: 1.8em;
  }
+ td{
+   border-bottom: solid 0.2mm #EDC758;
+   border-left: solid 0.2mm #EDC758;
+   padding: .5em;
+ }
+ th{
+   border-bottom: solid 0.2mm #EDC758;
+   border-left: solid 0.2mm #EDC758;
+ }
+ td:nth-child(even) {
+  background-color: #dddddd;
+}
+table {
+  border-spacing: 0;
+}
  .light{
    opacity: .34;
  }
  .hfl{
-   text-align: justify;
-   display: list-item;                                                     */
+   display: list-item;
+   text-align: justify;                                                 */
    list-style-type:circle;
    list-style-position: inside;
+   max-width: 60%;
+   margin: 0 auto;
  }
  #reading h3{
+   margin: 0 1em;
    line-height: 1.4em;
-   max-width: 88%;
+   text-align: center;
+   font-size: 2rem;
  }
  .dgreen{
    color: #2ABD6D;
@@ -252,7 +355,7 @@
    text-decoration: underline;
  }
  .strong{
-   font-weight: bold;:
+   font-weight: 600;
  }
 .magishim,.mekablim{
   line-height: 2.4rem;
@@ -283,15 +386,15 @@
   text-decoration-color: #9F863B;
 }
 li{
-  list-style-type:square;
-  text-indent: -1%;
+
+
   text-align: right;
   font-size: 1em;
 }
 
 .uline{
   background: #EFC959;
-  font-weight: 550;
+  font-weight: 400;
   font-size: 1.3em;
   margin: 2vh auto;
 }
@@ -334,7 +437,7 @@ li{
   justify-content:space-between;
   padding: 5%;
   font-size: 1.1em;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2em;
   margin: auto;
   box-shadow: 1px 1px 13px  1px #9F863B inset;
@@ -371,6 +474,7 @@ li{
   float:right;
 }
 .navbtn{
+  font-family: 'Heebo', sans-serif;
   background: none;
   border: none;
   margin: 0;
@@ -546,22 +650,18 @@ li{
   float:right;
 }
 
-
-.maincontent{
-  pointer-events: all;
-  height: auto;
-  width: 50%;
-  flex-wrap: wrap;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  margin: 1% auto;
-  top: 3em;
-  left: 50%;
-  transform: translateX(-50%);
-  justify-content: center;
-  align-content: center;
-  text-align: center;
+.maincontent {
+    pointer-events: all;
+    height: auto;
+    width: 65%;
+    flex-wrap: wrap;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 1% auto;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
 }
 .mainobject{
   display: flex;
@@ -642,11 +742,11 @@ a{
   background: linear-gradient(to left, transparent, white, white, transparent);
   border-top: 0.3mm #EFC959 solid;
   border-bottom: 0.3mm #EFC959 solid;
-  margin: 0;
+  padding: 3em;
   top:1em;
 }
 h1{
-  font-size: 7vh;
+  font-size: 2.8rem;
   background: -webkit-linear-gradient(black, #7D5E20 30%, black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -691,7 +791,7 @@ h1{
 
 /*mobile design*/
 @media only screen and (max-width: 650px) {
-h1 {
+ h1 {
     font-size: 4.5vh;
     background: -webkit-linear-gradient(black, #7D5E20 10%, black);
     -webkit-background-clip: text;
@@ -794,22 +894,20 @@ h1 {
   border-top: 0.3mm #EFC959 solid;
   border-bottom: 0.3mm #EFC959 solid;
   margin: 0 auto 2em;
+  padding: 0;
 }
 .maincontent{
-  width: 80%;
-  /* position: relative; */
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content:space-between;
-  text-align: center;
-  top: 30vh;
-  left: auto;
-  transform: translate( 0%);
-  align-self: center;
-  pointer-events: all;
-
+      width: 80%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      top: 20%;
+      left: auto;
+      align-self: center;
+      pointer-events: all
 }
 .secondary{
   width: 100%;
@@ -837,6 +935,10 @@ h1 {
   position: absolute;
   right: 3%;
   align-self:center;
+}
+.arrowbox{
+
+    left: .5em;
 }
 .mainobject p{
   margin: 0 auto;
@@ -942,12 +1044,12 @@ input, textarea{
  z-index: 200;
 }
 #reading{
-  margin: 1em auto 12vh;
+  margin: 1em 0 4em;
 
 }
 #reading p {
     padding: .5em 1em;
-    font-size: .85em;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.8em;
 }
@@ -957,6 +1059,9 @@ input, textarea{
     line-height: 1.6em;
     margin: 1em auto;
     text-align: center;
+}
+#reading h3{
+  font-size: 1.3rem
 }
 /* .read1{
   height: 40px;
@@ -993,7 +1098,7 @@ input, textarea{
     text-align: center;
     justify-content: space-around;
     font-size: 8px;
-    font-weight: 200;
+    font-weight: 400;
     filter: drop-shadow(0.1mm 0.1mm 0.5mm black);
     background: #F4DB90;
     border-radius: 5px 0 0 0;
@@ -1039,9 +1144,7 @@ input, textarea{
     align-items: center;
     font-size: 1em;
 }
-.secondary-read{
-  top: 20vh;
-}
+
 .backhead-read{
   margin: 0 auto 1vh;
 }
@@ -1059,6 +1162,9 @@ input, textarea{
     color: #EFC959;
     font-size: 1em;
 }
+#reading .quest{
+
+}
 .magishim,.mekablim{
   flex-direction: column;
 }
@@ -1071,4 +1177,5 @@ input, textarea{
   padding: 8% 8%;
   margin:  auto;
   display: block;
+}
 }
