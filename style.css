@@ -148,7 +148,7 @@ html{
  flex-direction: column;
  align-items:flex-start;
  position: fixed;
- top: 8vh;
+ top: 4vh;
  right: 0;
  z-index: 1000;
  /* background: linear-gradient( #F4DB90 , #7D5E20,  #F4DB90); */
@@ -191,6 +191,17 @@ html{
   border-radius:  1em 0  0 1em;
   color: #F4DB90
 }
+#Bcrumbs{
+  font-size: .5rem!important;
+  text-align: right;
+  color: #B38625;
+  opacity:.7;
+  transition: .5s ease;
+ background: none;
+}
+#Bcrumbs a:hover{
+  color: #7995A7;
+}
 #reading{
   position: relative;
   margin-top: 7vh;
@@ -202,24 +213,29 @@ html{
   min-width: 100%;
  }
  .questlist{
+
    margin: 0 auto;
    max-width: 95%;
    position: relative;
    border-right: 0.4mm solid #EFD58B;
    border-left: 0.4mm solid #EFD58B;
-   box-shadow: 1px 1px 4px 1px black;
+   box-shadow: 1px 1px 4px 0px gray;
    border-radius: 20px;
  }
  #reading .quest{
    margin: .5em auto;
-   border-radius: 20px;
-   padding: 1em;
-   padding-left: 3em;
-   text-align: center;
-   background: #EFD58B;
+    border-radius: 20px;
+    padding: 1em;
+    padding-left: 3em;
+    text-align: center;
+    background: black;
+    pointer-events: all;
+    cursor: pointer;
+    color: #EFC979;
  }
  #reading .quest:hover{
-   background: #BB9F5A
+   background: #EFC979;
+   color: #9B6B0F;
  }
  .answ{
    display: none;
@@ -284,7 +300,7 @@ html{
    font-size: 1.4rem;
    font-weight: 400;
    line-height: 1.8em;
-
+   margin: 0;
  }
  #reading img{
    width: 100%;
@@ -293,7 +309,7 @@ html{
  }
  #reading h2{
    font-size: 1.8em;
-   font-weight:600;
+   font-weight:400;
     line-height: 1.6em;
     margin: 1em auto;
     text-align: center;
@@ -312,11 +328,12 @@ html{
  td{
    border-bottom: solid 0.2mm #EDC758;
    border-left: solid 0.2mm #EDC758;
-   padding: .5em;
+   padding: 1em;
  }
  th{
    border-bottom: solid 0.2mm #EDC758;
    border-left: solid 0.2mm #EDC758;
+   text-align: center;
  }
  td:nth-child(even) {
   background-color: #dddddd;
@@ -327,12 +344,14 @@ table {
  .light{
    opacity: .34;
  }
+ .center{
+   text-align: center;
+ }
  .hfl{
    display: list-item;
    text-align: justify;                                                 */
    list-style-type:circle;
    list-style-position: inside;
-   max-width: 60%;
    margin: 0 auto;
  }
  #reading h3{
@@ -354,8 +373,8 @@ table {
  .underline{
    text-decoration: underline;
  }
- .strong{
-   font-weight: 600;
+ #reading .strong{
+   font-weight: 800;
  }
 .magishim,.mekablim{
   line-height: 2.4rem;
@@ -473,12 +492,58 @@ li{
   margin: 0;
   float:right;
 }
+.mamarhead{
+  position: relative;
+  padding: .5em 0 0;
+  background-image: url(bgrnd1.jpg);
+  border-radius: 10px;
+}
+ .mamarhead p{
+  color: white;
+  font-weight: 800;
+  font-size: 2.3em;
+}
+#mamarpage{
+  margin-top: 2em;
+  width:90%;
+}
+.mamarbtn{
+  margin 0.5mm;
+  display: flex;
+  padding:1em;
+  font-size: 1.6rem;
+  font-family: 'Heebo';
+  min-width: 10%;
+  max-width: 50%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: solid 0.1mm #9B6B0F;
+  border-radius: 10px;
+  background: #EDC758;
+  overflow: hidden;
+}
+.mamarbtn:hover{
+  background: #DDB54A;
+}
+.flexrow{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+
+
 .navbtn{
   font-family: 'Heebo', sans-serif;
   background: none;
   border: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
 }
 #homebtn{
   position: fixed;
@@ -760,19 +825,12 @@ h1{
   height: 1700px;
 }
 #paypop>iframe{
-  color: #EFC959
-  width: auto;
-  height: 1700px;
-  display: flex;
-  flex-direction:column;
-  align-items:baseline;
-  justify-content: center;
-  align-self: center;
-  text-align: center;
-  border-radius: 4px;
-  overflow: hidden;
+  color: #EFC959;
+  min-width:80%;
+  height: auto;
+
   border: none;
-  margin: 5px;
+  margin: 5px auto;
  }
 .sign button{
   width: 200px;
@@ -911,7 +969,7 @@ h1{
 }
 .secondary{
   width: 100%;
-  margin: 0;
+  margin: 11em auto;
 }
 .mainobject{
   display: flex;
@@ -958,9 +1016,11 @@ h1{
   height: inherit;
 }
 #paypop>iframe{
+  width: 100%;
+  height: 80vh;
   border-radius: 0px;
   border: none;
-  margin: 1px;
+  margin: 1px auto;
  }
 .message-box{
   height: auto;
@@ -1039,19 +1099,20 @@ input, textarea{
  flex-direction: column;
  align-items:flex-start;
  position: fixed;
- top: 14vh;
+ top: 12vh;
  right: 0;
  z-index: 200;
 }
 #reading{
   margin: 1em 0 4em;
-
 }
+
 #reading p {
     padding: .5em 1em;
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.8em;
+    margin: 0;
 }
 #reading h2 {
     font-size: 1.2em;
@@ -1177,5 +1238,13 @@ input, textarea{
   padding: 8% 8%;
   margin:  auto;
   display: block;
+}
+.mamarbtn{
+  width: auto;
+  min-width: auto;
+  max-width: none;
+}
+.flexrow{
+  flex-direction: column;
 }
 }
