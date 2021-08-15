@@ -27,8 +27,8 @@ html{
   font-style: italic;
 }
 #sara{
-  height: 40%;
-  width: 55%;
+  height: 130px;
+  width: 212px;
   pointer-events: all;
   display: block;
   border-radius: 20%;
@@ -38,9 +38,9 @@ html{
 #ils{
   pointer-events: all;
   margin: auto;
-  height: 75px;
-  width: 75px;
- filter: contrast(130%);
+  height: 63px;
+  width: 63px;
+  filter: contrast(130%);
 }
 .head-title{
     position: relative;
@@ -192,7 +192,7 @@ html{
   color: #F4DB90
 }
 #Bcrumbs{
-  font-size: .5rem!important;
+  font-size: 1.1rem!important;
   text-align: right;
   color: #B38625;
   opacity:.7;
@@ -482,6 +482,7 @@ li{
 }
 .maanak, .maanakAsk{
   filter: drop-shadow(1px 1px 1px black);
+  margin:0;
 }
 #readingBar i:hover{
   color: black;
@@ -576,7 +577,7 @@ li{
     padding: 0.4em;
     position: absolute;
     top: 8vh;
-    left: -0.5%;
+    left: 0;
     background: linear-gradient(to right bottom, #7D5E20, #F4DB90, #7D5E20);
     border: solid 0.4mm black;
     height: 220px;
@@ -634,8 +635,8 @@ li{
   filter: drop-shadow(1px 1px 2px black);
 }
 .head-title2 #sara{
-  height: 25%;
-  width: 25%;
+  height: 95px;
+  width: 158px;
   position: relative;
   top:0;
   margin: 0 auto 0;
