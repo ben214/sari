@@ -1,36 +1,8 @@
 
 
-var i = 0;
-setInterval(moveIt, 3500);
-  var moveIt = function slideUs(){
-
- var active = document.getElementsByClassName('slide');
- var max = active.length;
- var prev = active[i];
- var playing = active[i +1];
-   // console.log("before "+i);
-
-   if (i == max-1) {
-      i=0;
-      playing = active[max-1];
-      prev = active[i];
-
-      playing.classList.remove("active");
-
-      console.log("restart!!" + active[max-1].style.display);
-      playing = active[0];
-
-   }else {
-     i++;
-     prev.classList.remove("active");
-   }
-
-   playing.classList.add("active");
-
-}
-
-  var readingbar = '<div class="readHead">מאמרים:<a style="height: 100%;   width: 100%; cursor: pointer; position: absolute" href="mamarim.html"></a></div>'
-
+var barcont = '<div id="barCont"><div class="barCont2"><div class="bar bar1"></div><div  class="bar bar2"></div><div class="bar bar3"></div></div></div>';
+  var readingbar = '<div class="readHead">מאמרים:<a style="height: 100%;   width: 100%; cursor: pointer; position: absolute" href="mamarim.html"></a></div></div>';
+ 
   // מענק עבודה --------------------------
   var maanakAvoda = '<button class="navbtn" type="btn"><div class="read1 read"> <div class="maanak">מענק עבודה</div><i class="fa fa-chevron-circle-left"></i></div><div class="toggling" id="toggling" style="display: none;"> <a class="maanakAsk read-inner1" href="maanak1.html"> זכאות למענק עבודה<i class="fa fa-chevron-circle-left"></i></a> <a class="maanakAsk read-inner1" href="maanak2.html">הגשת בקשה למענק עבודה <i class="fa fa-chevron-circle-left"></i></a></div></button>';
 
@@ -41,21 +13,44 @@ setInterval(moveIt, 3500);
 //  פתיחת עסק -----------
  var P_esek = ' <button class="navbtn" type="btn"><div class="read1 read"> <div class="maanak">פתיחת עסק</div> <i class="fa fa-chevron-circle-left"></i> </div>  <div class="toggling" id="toggling" style="display: none;"> <a class="maanakAsk read-inner1" href="OsekPatur.html"> עוסק פטור <i class="fa fa-chevron-circle-left"></i> </a><a class="maanakAsk read-inner1" href="hevdelPaturMurshe.html">ההבדלים בין עוסק פטור לעוסק מורשה<i class="fa fa-chevron-circle-left"></i></a><a class="maanakAsk read-inner1" href="OsekMurshe.html"> עוסק מורשה<i class="fa fa-chevron-circle-left"></i> </a><a class="maanakAsk read-inner1" href="hazHon.html">הצהרת הון<i class="fa fa-chevron-circle-left"></i></a> </div> </button>';
  var readbar = readingbar+maanakAvoda+dmaiLeida+P_esek;
-   $('#readingBar').html(readbar)
+
+var backToRead = '<a style="padding: 1em; background: #F1D88D; border-radius: 10px; font-size: 1.3em; margin-top: 1em" href="mamarim.html">למאמרים נוספים...</a>';
+
+
+ $(barcont).insertBefore($('#readingBar'))
+ $(backToRead).insertAfter($('#reading'))
+
+   $('#readingBar').html(readbar);
+  
+   $('#barCont').click(XtheBar) 
+   function XtheBar(){
+      $('#readingBar').toggleClass('barOpen'),
+      
+      $('.bar1').toggleClass('bar1open'),
+      $('.bar2').toggleClass('bar2open'),
+      $('.bar3').toggleClass('bar3open'),
+      $('#barCont').toggleClass('barContoOpen')
+
+      if ($('#readingBar').attr('class') === 'barOpen') {
+        closeAll();
+      }
+
+     
+   }
 
 //  -------------iconbar----------------
 // ------------------------------------------
-   var whatsapp = '<a class="icons whatsapp" href="https://api.whatsapp.com/send?phone=+972584108109" target="_blank"><img src="https://img.icons8.com/color/50/000000/whatsapp--v1.png"/></a>';
-   var phone= '<a class="icons phone" href="tel:0548511223"><img src="https://img.icons8.com/ios-filled/50/4a90e2/apple-phone.png"/></a>';
-   var facebook = '<a class="icons fb" href="https://www.facebook.com/profile.php?id=100050560593713" target="_blank"><img src="https://img.icons8.com/metro/52/4a90e2/facebook-new--v2.png"/></a>';
-   var email = '<a class="icons mail" href="mailto:S6528718@gmail.com" target="_blank"><img src="email.ico"/></a>';
+   var whatsapp = '<a class="icons whatsapp" href="https://api.whatsapp.com/send?phone=+972584108109" target="_blank"><i class="fa fa-whatsapp"></i></a>';
+   var phone= '<a class="icons phone" href="tel:0548511223"><i class="fa fa-phone" ></i></a>';
+   var facebook = '<a class="icons fb" href="https://www.facebook.com/profile.php?id=100050560593713" target="_blank"><i class="fa fa-facebook"></i></a>';
+   var email = '<a class="icons mail" href="mailto:S6528718@gmail.com" target="_blank"><i class="fa fa-at"></i></a>';
    var iconcontent = whatsapp+phone+facebook+email;
    
 
-   $(document).ready(function(){
-
-      $('#iconbar, #iconbar2').html(iconcontent)
-   });
+  
+// iconBAR FUNCTIONALITY---------
+      $('#iconbar, #iconbar2').html(iconcontent);
+  
 
 
 
@@ -77,17 +72,6 @@ setInterval(moveIt, 3500);
         $(this).on('click', closeAll)
 }
 
-
-// adding new nav buttons to sidebar---------------------------------------------------
-
-
-  // var toggling = $('.toggling')
-  // var esektoggle = toggling[2]
-  // var paturtoggle = $(esektoggle).children('a')
-  // var paturA = paturtoggle[1]
-  //   $(paturA).before("<a href='hevdelPaturMurshe.html' class='maanakAsk read-inner1'>ההבדלים בין עוסק פטור לעוסק מורשה<i class='fa fa-chevron-circle-left'></i></a>")
-  // var mursheA = paturtoggle[1]
-  // $(mursheA).after("<a href='hazHon.html' class='maanakAsk read-inner1'>הצהרת הון<i class='fa fa-chevron-circle-left'></i></a>")
 
 var readingTop = $('#reading')
 var thisPage = $('h1').html()
@@ -114,9 +98,10 @@ $(document).ready(function(){
     $('html, body').animate({
        scrollTop: $('#activequest').offset().top
      }, 300)
-     var mq = window.matchMedia( "(max-width: 600px)" );
+     var mq = window.matchMedia( "(max-width: 850px)" );
   if (mq.matches){
-      $('.head-title2').css('display', 'none')
+      $('.head-title2').css('display', 'none'),
+      $('#homebtn').css('top', '15px')
       }
   $(this).click(clsallansw)
   console.log('openanswer')
@@ -127,9 +112,10 @@ function clsallansw(){
    $('.quest').unbind('click', clsallansw),
    $('.quest').click(openanswer)
    $('.arrowbox').removeClass('arrowboxopen')
-   var mq = window.matchMedia( "(max-width: 600px)" );
+   var mq = window.matchMedia( "(max-width: 850px)" );
 if (mq.matches){
-    $('.head-title2').css('display', 'block')
+    $('.head-title2').css('display', 'block'),
+    $('#homebtn').css('top', '75px')
     }
 
 }
