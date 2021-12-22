@@ -157,13 +157,13 @@
 .readHead{
   position: relative;
   right: 0;
-  height: 30px;
+  height: 50px;
   width: 130px;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: space-around;
-  font-size: 1em;
+  font-size: 1.4em;
   font-weight: 200;
   filter: drop-shadow(0.1mm 0.1mm 0.5mm black);
   background:#F4DB90;

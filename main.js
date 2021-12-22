@@ -12,11 +12,13 @@ var barcont = '<div id="barCont"><div class="barCont2"><div class="bar bar1"></d
 
 //  פתיחת עסק -----------
  var P_esek = ' <button class="navbtn" type="btn"><div class="read1 read"> <div class="maanak">פתיחת עסק</div> <i class="fa fa-chevron-circle-left"></i> </div>  <div class="toggling" id="toggling" style="display: none;"> <a class="maanakAsk read-inner1" href="OsekPatur.html"> עוסק פטור <i class="fa fa-chevron-circle-left"></i> </a><a class="maanakAsk read-inner1" href="hevdelPaturMurshe.html">ההבדלים בין עוסק פטור לעוסק מורשה<i class="fa fa-chevron-circle-left"></i></a><a class="maanakAsk read-inner1" href="OsekMurshe.html"> עוסק מורשה<i class="fa fa-chevron-circle-left"></i> </a><a class="maanakAsk read-inner1" href="hazHon.html">הצהרת הון<i class="fa fa-chevron-circle-left"></i></a> </div> </button>';
- var readbar = readingbar+maanakAvoda+dmaiLeida+P_esek;
+ 
+ var teum = ' <button class="navbtn" type="btn"><div class="read1 read"> <div class="maanak">תיאום/החזרי מס</div><i class="fa fa-chevron-circle-left"></i> </div><div class="toggling" id="toggling" style="display: none;"> <a class="maanakAsk read-inner1" href="teumMas.html">תיאום מס<i class="fa fa-chevron-circle-left"></i> </a></div><div class="toggling" id="toggling" style="display: none;"> <a class="maanakAsk read-inner1" href="taxreturn.html">החזרי מס לשכירים<i class="fa fa-chevron-circle-left"></i> </a></div> </button>';
+ var readbar = readingbar+maanakAvoda+dmaiLeida+P_esek+teum;
 
 var backToRead = '<a style="padding: 1em; background: #F1D88D; border-radius: 10px; font-size: 1.3em; margin-top: 1em" href="mamarim.html">למאמרים נוספים...</a>';
 
-
+$( document ).ready(function() {
  $(barcont).insertBefore($('#readingBar'))
  $(backToRead).insertAfter($('#reading'))
 
@@ -59,7 +61,7 @@ var backToRead = '<a style="padding: 1em; background: #F1D88D; border-radius: 10
     $('.toggling').hide()
     $(this).unbind('click', closeAll),
       $('.navbtn').on('click', openthis)
-        $(".read").children('i').removeClass("rotate", 1000)
+        $(".read").children('i').removeClass(1000)
 
   }
 
@@ -67,7 +69,7 @@ var backToRead = '<a style="padding: 1em; background: #F1D88D; border-radius: 10
      closeAll()
       $(this).find('.toggling').show(100),
       $(this).children(".read").children('i').toggleClass("rotate", 1000)
-      console.log('block!!');
+      // console.log('block!!');
       $(this).unbind('click', openthis),
         $(this).on('click', closeAll)
 }
@@ -89,6 +91,9 @@ $(document).ready(function(){
    $('.bottomarr').click(clsallansw)
   $('.quest').click(openanswer)
  function openanswer() {
+   if ($('#barCont').attr("class") === "barContoOpen") {
+     XtheBar();
+   }
   var answer = $(this).parents('.questlist').children('.answ')
   clsallansw()
   $(this).children('.arrowbox').addClass('arrowboxopen'),
@@ -104,10 +109,13 @@ $(document).ready(function(){
       $('#homebtn').css('top', '15px')
       }
   $(this).click(clsallansw)
-  console.log('openanswer')
-  console.log($('#activequest').css('background'));
+  // console.log('openanswer')
+  // console.log($('#activequest').css('background'));
 }
 function clsallansw(){
+  if ($('#barCont').attr("class") === "barContoOpen") {
+    XtheBar();
+  }
    $('.answ').css('display', 'none'),
    $('.quest').unbind('click', clsallansw),
    $('.quest').click(openanswer)
@@ -120,4 +128,6 @@ if (mq.matches){
 
 }
 
+
+})
 })
