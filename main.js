@@ -16,11 +16,58 @@ var barcont = '<div id="barCont"><div class="barCont2"><div class="bar bar1"></d
  var teum = ' <button class="navbtn" type="btn"><div class="read1 read"> <div class="maanak">תיאום/החזרי מס</div><i class="fa fa-chevron-circle-left"></i> </div><div class="toggling" id="toggling" style="display: none;"> <a class="maanakAsk read-inner1" href="teumMas.html">תיאום מס<i class="fa fa-chevron-circle-left"></i> </a></div><div class="toggling" id="toggling" style="display: none;"> <a class="maanakAsk read-inner1" href="taxreturn.html">החזרי מס לשכירים<i class="fa fa-chevron-circle-left"></i> </a></div> </button>';
  var readbar = readingbar+maanakAvoda+dmaiLeida+P_esek+teum;
 
-var backToRead = '<a style="padding: 1em; background: #F1D88D; border-radius: 10px; font-size: 1.3em; margin-top: 1em" href="mamarim.html">למאמרים נוספים...</a>';
+var backToRead = '<a id="backToRead" class="backtoread" style="padding: 1em; background: #F1D88D; border-radius: 10px; font-size: 1.3em; margin-top: 1em" href="mamarim.html">למאמרים נוספים...</a><br>';
+
+
+//  -------------floating contact----------------
+// ------------------------------------------
+var H1text = $('h1').html();
+
+// var H1text1 = H1text.replace("%%","%");
+var msg1 = "שלום אני מתעניין/ת בעזרה בנושא: "+H1text;
+
+// var msg1 = msg1.replace(/ /g,"%");
+// var msg1 = msg1.replace(/  /g,"%");
+// var msg1 = msg1.replace(/%%/g,'%');
+var whatsapp = '<a class="iconsfloat whatsapp" href="https://wa.me/00972584108109?text='+msg1+'";target="_blank"><i class="fa fa-whatsapp"></i></a>';
+var phone= '<a class="iconsfloat phone" href="tel:0548511223""><i class="fa fa-phone"></i></a>';
+var facebook = '<a class="iconsfloat fb" href="http://m.me/100050560593713?msg_prefill=kjkjh" target="_blank"><i class="fa fa-facebook"></i></a>';
+var email = '<a class="iconsfloat mail" href="mailto:S6528718@gmail.com?subject='+H1text+'&body='+msg1+'" target="_blank"><i class="fa fa-at"></i></a>';
+var close1 = '<a class="iconsfloat cross"><i class="fa fa-times"></i></a>'
+var helpcontent = whatsapp+phone+email+close1;
+var helpmediv = "<div id='helpout'><div id='helpme'>"+helpcontent+"</div></div>";
+var helpline = '<div id="helpline"><i class="fa fa-comment openi"></i><span id="helptext">רוצים שנעזור לכם בזה??</span>'+helpmediv+'</div>';
+
 
 $( document ).ready(function() {
+
+  $('#reading').append(helpline);
+// $('#helpline').append(helpmediv);
+// $('#helpme').html(helpcontent);
+$('#helpout').css("display", "none"),
+$('#helpline>.openi').click(opencont);
+$('#helptext').click(opencont);
+  function opencont(){
+  // $('#helpline').html(helpmediv);
+  $('#helpout').show(300),
+  $('#helpme').animate({height: '150px',width: '150px', opacity: '0.5'}, "fast");
+  $('#helpme').animate({height: '100px',width: '150px', opacity: '0.8'}, "fast");
+  $('#helpme').animate({height: '150px',width: '150px', opacity: '1'}, "slow");
+  $('#helpme>.fa').animate({height: '-=10px',width: '-=10px', opacity: '1'}, "slow");
+  console.log("openong");
+}
+$('.cross').click(function(){
+  $('#helpme').animate({height: '50px',width: '50px', opacity: '.5'},1000);
+  $('#helpme').animate({height: '0px',width: '0px', opacity: '0'},500);
+  $('#helpout').hide(1000),
+  console.log('helpline');
+});
+
+
+
  $(barcont).insertBefore($('#readingBar'))
  $(backToRead).insertAfter($('#reading'))
+ 
 
    $('#readingBar').html(readbar);
   
@@ -84,9 +131,11 @@ var readhead = $('#readingBar>.readHead')
 
 $(readhead).html("מאמרים:");
 $(readhead).append("<a style='height: 100%; width: 100%; cursor: pointer; position: absolute' href='mamarim.html'></a>")
-console.log($(readhead).text());
+// console.log($(readhead).text());
   //end of adding new nav buttons to sidebar---------------------------------------------------
 
+
+  
 $(document).ready(function(){
    $('.bottomarr').click(clsallansw)
   $('.quest').click(openanswer)
@@ -94,10 +143,13 @@ $(document).ready(function(){
    if ($('#barCont').attr("class") === "barContoOpen") {
      XtheBar();
    }
-  var answer = $(this).parents('.questlist').children('.answ')
-  clsallansw()
+  var answer = $(this).parents('.questlist').children('.answ');
+  clsallansw();
   $(this).children('.arrowbox').addClass('arrowboxopen'),
-  answer.show(300),
+  answer.css('display', 'block'),
+  answer.animate({'opacity': 1}, 600),
+
+  
   $(this).attr('id', 'activequest')
   $(this).unbind('click', openanswer)
     $('html, body').animate({
@@ -105,24 +157,33 @@ $(document).ready(function(){
      }, 300)
      var mq = window.matchMedia( "(max-width: 850px)" );
   if (mq.matches){
-      $('.head-title2').css('display', 'none'),
-      $('#homebtn').css('top', '15px')
+      // $('.head-title2').css('display', 'none'),
+      $('#homebtn').css('top', '15px');
+      var titleheight1 = $('.head-title2').css('height');
+      var titleheight = parseInt(titleheight1, 10);
+      $('html, body').animate({
+        scrollTop: $('#activequest').offset().top - titleheight - 20//padding is 20
+      }, 300)
+      console.log(titleheight);
       }
   $(this).click(clsallansw)
   // console.log('openanswer')
-  // console.log($('#activequest').css('background'));
+
 }
 function clsallansw(){
   if ($('#barCont').attr("class") === "barContoOpen") {
     XtheBar();
   }
-   $('.answ').css('display', 'none'),
+  var answer = $(this).parents('.questlist').children('.answ');
+  answer.css('opacity', '0'),
+   $('.answ').css('display', 'none'), 
    $('.quest').unbind('click', clsallansw),
+   $('.quest').removeAttr('id'),
    $('.quest').click(openanswer)
    $('.arrowbox').removeClass('arrowboxopen')
    var mq = window.matchMedia( "(max-width: 850px)" );
 if (mq.matches){
-    $('.head-title2').css('display', 'block'),
+    // $('.head-title2').css('display', 'block'),
     $('#homebtn').css('top', '75px')
     }
 
