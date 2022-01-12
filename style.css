@@ -172,6 +172,12 @@ html{
     background: #F4DB90;
     border-radius: 10px 0 0 0;
 }
+.readHead:hover{
+  filter: brightness(120%);
+  animation-name: btighter;
+  animation-duration: 1s;
+}
+
 .readHeadRead{
     border-radius:  1em 0 0 1em;
 }
@@ -211,16 +217,17 @@ html{
   border-left: 0.2mm solid #9F863B;
   color: #50370d;
   background: #DEE2E2;
-  /* background-blend-mode: lighten; */
+  overflow: auto !important;
   min-width: 100%;
+  min-height: fill-content;
  }
  .questlist{
    margin: 0 auto;
    max-width: 95%;
    position: relative;
-   border-right: 0.4mm solid #EFD58B;
-   border-left: 0.4mm solid #EFD58B;
-   box-shadow: 1px 1px 4px 0px gray;
+   /* border-right: 0.4mm solid #EFD58B;
+   border-left: 0.4mm solid #EFD58B; */
+   box-shadow: 0px 0px 4px 0px gray;
    border-radius: 20px;
    
  }
@@ -228,6 +235,7 @@ html{
    background: #EFC979!important;
    color: #9B6B0F!important;
  }
+ 
 
  #reading .quest{
    margin: .5em auto;
@@ -241,6 +249,7 @@ html{
     color: #EFC979;
     transition: .5ms ease-in-out;
  }
+ 
  #reading .quest:hover{
    background: #EFC979;
    color: #9B6B0F;
@@ -252,48 +261,45 @@ html{
   to {background-color: #EFC979;}
 }
  .answ{
-   opacity: 0;
    display: none;
    padding-bottom: 1.5em;
+   max-height: 0;
  }
  #helpme{
+   display: none;
   text-align: center;
     position: absolute;
-    bottom: 0em;
-    left: 41%;
-    background: radial-gradient(transparent, 4%, #6D5B2F 41%, transparent 68%);
-    height: 0px;
-    width: 0px;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(transparent, 20%, #6D5B2F 42%, transparent 72%);
+    height: 150px; 
+    width: 150px;
     border: #6D5B2F solid 0.2px;
     border-radius: 50%;
-    opacity: 0;
+    opacity: 1;
     box-shadow: 0px 0px 16px 0px #6d5b2f;
+    overflow: -moz-hidden-unscrollable!important;
  }
  #helpline{
-   width: 50px;
-   text-align: center;
-   font-size: 1em;
-   height: 120px;
+  width: 200px;
+  height: auto;
+  padding: 0.3rem;
+  cursor: pointer;
+  margin: 0 auto 1em;
+  border: 1px solid #967126;
+  border-radius: 30px;
+  background: white;
+  text-align: center;
+  font-size: 1em;
  }
- #helptext{
-  width: 86px;
-  position: absolute;
-  bottom: 20px;
-  left: 45%;
+ #helpline:hover{
+   font-weight: 700;
+   transition: font-weight .4s ease;
+   box-shadow: 0px 0px 3px 0px black;
  }
- .fa-comment{
-  position: absolute;
-  color: white;
-  font-size: 8em!important;
-  filter: drop-shadow(0px 0px 3px #967126);
-  transform: rotate3d(35, 1, 1, 185deg);
-  left: 42%;
-  transition: color, filter .3s ease-in-out;
- }
- #helpline:hover>.fa-comment{
-  color: #F9F0D7;
-  filter: drop-shadow(0px 0px 1px #967126);
- }
+ 
+ 
  .iconsfloat{
   background: #332305;
     display: inline-block;
@@ -338,7 +344,20 @@ html{
   height: fit-content;
   margin: -0.55em;
 }
-
+.backtoread{
+  padding: 1em;
+  background: #F1D88D;
+  border-radius: 0 0 10px 10px;
+  font-size: 1.3em;
+  width: 100%;
+  color: #50370D;
+ 
+}
+.backtoread:hover{
+  box-shadow: 0px 0px 5px 0pc black;
+  background: #e0c485;
+  transition: background .3s ease-in-out
+}
  .arrowbox {
      transform: none;
      transition: .3s ease-in-out;
@@ -548,7 +567,7 @@ li{
 }
 @keyframes btighter {
  from {filter: brightness(100%);}
- to {background-color: #EFC979;}
+ to {filter: brightness(120%)}
 }
 
 .read-inner1{
@@ -561,16 +580,16 @@ li{
   align-content:center;
   justify-content:space-between;
   padding: 5%;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 400;
   line-height: 1.2em;
   margin: auto;
   box-shadow: 1px 1px 13px  1px #9F863B inset;
-  background-image: url(bgrnd.jpg);
+  background: #f3eace;
   border: 0.2mm solid #F4DB90;
   border-radius:  0;
-  color: #27200a;
-  transition: transform 0.3s ;
+  color: #624f14;
+  text-align: right;
 }
 #info{
   height: 20px;
@@ -597,6 +616,7 @@ li{
   display:none;
   padding:0;
   margin: 0;
+  
   
 }
 .mamarhead{
@@ -1125,7 +1145,8 @@ h1{
 }
 .maincontent{
       width: 80%;
-      height: auto;
+      height: 100%;
+      min-height: 100vh;
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
@@ -1134,11 +1155,13 @@ h1{
       top: 20%;
       left: auto;
       align-self: center;
-      pointer-events: all
+      pointer-events: all;
+      overflow: hidden;
 }
 .secondary{
   width: 100%;
-  margin: 7em auto 3em;
+  margin: 7em auto 1em;
+  overflow: auto!important;
 }
 .mainobject{
   display: flex;
@@ -1337,7 +1360,8 @@ input, textarea{
 }
 
 #reading{
-  margin: 1em 0 0;
+  margin: 1em auto 0;
+  overflow: auto !important;
 }
 
 #reading .quest:hover{
@@ -1486,4 +1510,6 @@ input, textarea{
 .flexrow{
   flex-direction: column;
 }
+
+
 }
